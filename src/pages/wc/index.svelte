@@ -1,5 +1,6 @@
 <script>
   import { folder, isDarkMode } from "../../store/store";
+  import { goto } from "@roxi/routify";
 
   folder.set({ name: "root", type: "folder", children: [] });
 
@@ -10,9 +11,18 @@
   function folderupdate(event) {
     folder.set(event.detail.folder);
   }
+
+  function handleLogut() {
+    $goto('/');
+  }
+
   $: console.log($folder);
 </script>
 
+
+<div class="header">
+  <button class="logout" on:click={handleLogut}>Logout</button>
+</div>
 <div class="container">
   <div class="theme">
     <label class="toggle-switch-label">
@@ -33,9 +43,6 @@
 </div>
 
 <style>
-  .container {
-    padding: 5rem;
-  }
   .theme {
     display: flex;
     justify-content: space-around;
@@ -85,5 +92,22 @@
   }
   .toggle-switch-label span {
     margin-right: 0.8rem;
+  }
+  .logout {
+   border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    width: 96px;
+    height: 37px;
+    padding: 10px;
+    background-color: #0c0a09;
+    color: #fff;
+  }
+  .header {
+    display: flex;
+    padding: 15px;
+    height: 70px;
+    flex-direction: row-reverse;
   }
 </style>
