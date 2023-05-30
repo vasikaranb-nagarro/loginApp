@@ -103,9 +103,11 @@
   .login-field input {
     border-radius: 4px;
     font-size: 14px;
-    width: 100%;
+    width: 90%;
     padding: 8px;
     border: 1px solid #ccc;
+    color: black;
+    background-color: white;
   }
 
   .login-field button {
@@ -113,7 +115,7 @@
     border-radius: 4px;
     font-size: 14px;
     cursor: pointer;
-    width: 100%;
+    width: 50%;
     padding: 10px;
     background-color: #333;
     color: #fff;
